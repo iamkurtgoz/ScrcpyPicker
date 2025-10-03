@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# Ensure we are in the app's root to reference files predictably
+APP_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+RUN_CMD="$APP_ROOT/Resources/run.command"
+
+# Try to open the .command file in Terminal (no Apple Events permission needed)
+open -a Terminal "$RUN_CMD" >/dev/null 2>&1
+STATUS=$?
+
+if [ $STATUS -ne 0 ]; then
+	# Fallback: execute directly (no Terminal window)
+	chmod +x "$RUN_CMD" 2>/dev/null || true
+	exec "$RUN_CMD"
+fi
+
+exit 0
