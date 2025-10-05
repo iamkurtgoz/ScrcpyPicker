@@ -1,9 +1,10 @@
 ## ScrcpyPicker
 
-Basit bir terminal aracı ve çift tıklanabilir macOS uygulaması ile `adb` üzerinden bağlı Android cihazlarını listeler, seçtiğiniz cihazı `scrcpy` ile başlatır.
+Basit bir macOS uygulaması ile `adb` üzerinden bağlı Android cihazlarını listeler, seçtiğiniz cihazı `scrcpy` ile başlatır.
 
-- Python betiği: `scrcpy_picker.py`
-- macOS uygulaması: `ScrcpyPicker.app`
+Son sürüm (macOS uygulaması): 1.0.1
+
+İndir (Releases): https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
 
 ---
 
@@ -20,18 +21,14 @@ brew install --cask android-platform-tools
 ```bash
 brew install scrcpy
 ```
-- **Python 3** (macOS’te genellikle `/usr/bin/python3` mevcut)
 
 Not: Uygulama öncelikle `/opt/homebrew/bin/scrcpy` yolunu dener, yoksa `PATH` içinden `scrcpy` arar.
 
 #### Hızlı Başlangıç
-- Terminal’den Python betiği:
-```bash
-python3 /Users/iamkurtgoz/Software/ScrpyApp/scrcpy_picker.py
-```
-- Finder’dan macOS uygulaması:
-  - `ScrcpyPicker.app` üzerine çift tıklayın.
-  - İlk açılışta “Bilinmeyen geliştirici” uyarısı görürseniz Sistem Ayarları → Güvenlik ve Gizlilik → “Yine de Aç”.
+- İndir ve Aç (macOS uygulaması):
+  1. `ScrcpyPicker.app` uygulamasını indir: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
+  2. Zip’i açın, `ScrcpyPicker.app` üzerine çift tıklayın.
+  3. İlk açılışta “Bilinmeyen geliştirici” uyarısı görürseniz Sistem Ayarları → Güvenlik ve Gizlilik → “Yine de Aç”.
 
 #### Nasıl Çalışır
 1. `adb devices -l` çıktısı okunur ve yalnızca `device` durumundaki cihazlar listelenir.
@@ -44,13 +41,7 @@ python3 /Users/iamkurtgoz/Software/ScrpyApp/scrcpy_picker.py
   - Eğer `/opt/homebrew/bin/scrcpy` yoksa `which scrcpy` sonucundaki ikili kullanılır.
 
 #### macOS Uygulaması (Çift Tıklama)
-- Uygulama yapısı:
-  - `ScrcpyPicker.app/Contents/Info.plist`
-  - `ScrcpyPicker.app/Contents/MacOS/ScrcpyPicker` (başlatıcı)
-  - `ScrcpyPicker.app/Contents/Resources/run.command` (Terminal uyumlu başlatma)
-- Çalışma mantığı:
-  - `ScrcpyPicker` başlatıcı, `Resources/run.command` dosyasını Terminal ile açar.
-  - `run.command` Python betiğini çalıştırır, hata varsa pencerenin kapanmasını engellemek için Enter bekletmesi yapar.
+- `ScrcpyPicker.app` üzerine çift tıklayın ve ekrandaki yönergeleri izleyin.
 
 #### İzinler ve Güvenlik
 - İlk çalıştırmada macOS Gatekeeper uyarı verebilir. Sistem Ayarları → Güvenlik ve Gizlilik’ten “Yine de Aç” deyin.
@@ -71,13 +62,7 @@ python3 /Users/iamkurtgoz/Software/ScrpyApp/scrcpy_picker.py
   - Parametreler `--no-audio` içerir. Ses gerekiyorsa bu parametreyi betikte/komutta kaldırın.
 
 #### Özelleştirme
-- `scrcpy` argümanlarını güncellemek için `scrcpy_picker.py` içindeki `cmd` listesinde değişiklik yapın.
-- `python3` yolunu sabitlemek için `ScrcpyPicker.app/Contents/Resources/run.command` dosyasında `PY_BIN` değişkenini `/usr/bin/python3` olarak bırakabilirsiniz.
-- Uygulama ikonunu eklemek için `ScrcpyPicker.app/Contents/Resources/AppIcon.icns` yerleştirin ve `Info.plist` içine ekleyin:
-```xml
-<key>CFBundleIconFile</key>
-<string>AppIcon</string>
-```
+- İleri düzey kullanıcılar `scrcpy` argümanlarını sistemlerindeki `scrcpy` varsayılanlarıyla özelleştirebilir.
 
 #### Bilinen Kısıtlar
 - Yalnızca `device` durumundaki cihazlar listelenir.
@@ -99,18 +84,14 @@ brew install --cask android-platform-tools
 ```bash
 brew install scrcpy
 ```
-- **Python 3** (macOS usually has `/usr/bin/python3`)
 
 Note: The app first tries `/opt/homebrew/bin/scrcpy`; if missing, it falls back to the `scrcpy` found in `PATH`.
 
 #### Quick Start
-- From Terminal (Python script):
-```bash
-python3 /Users/iamkurtgoz/Software/ScrpyApp/scrcpy_picker.py
-```
-- From Finder (macOS app):
-  - Double-click `ScrcpyPicker.app`.
-  - If you see an “Unidentified developer” warning, go to System Settings → Security & Privacy → “Open Anyway”.
+- Download & Open (macOS app):
+  1. Download `ScrcpyPicker.app`: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
+  2. Unzip and double-click `ScrcpyPicker.app`.
+  3. If you see an “Unidentified developer” warning, go to System Settings → Security & Privacy → “Open Anyway”.
 
 #### How It Works
 1. Reads `adb devices -l` and lists only devices in `device` state.
@@ -123,13 +104,7 @@ python3 /Users/iamkurtgoz/Software/ScrpyApp/scrcpy_picker.py
   - If `/opt/homebrew/bin/scrcpy` is unavailable, uses the binary from `which scrcpy`.
 
 #### macOS App (Double-Click)
-- App layout:
-  - `ScrcpyPicker.app/Contents/Info.plist`
-  - `ScrcpyPicker.app/Contents/MacOS/ScrcpyPicker` (launcher)
-  - `ScrcpyPicker.app/Contents/Resources/run.command` (Terminal-friendly launcher)
-- Behavior:
-  - The launcher opens `run.command` in Terminal.
-  - `run.command` runs the Python script; on failure it waits for Enter so the window does not close immediately.
+- Double-click `ScrcpyPicker.app` and follow on-screen guidance.
 
 #### Permissions & Security
 - macOS Gatekeeper may block the first run. Use System Settings → Security & Privacy → “Open Anyway”.
@@ -150,13 +125,7 @@ python3 /Users/iamkurtgoz/Software/ScrpyApp/scrcpy_picker.py
   - Parameters include `--no-audio`. Remove it if you need audio.
 
 #### Customization
-- Change `scrcpy` arguments inside `scrcpy_picker.py` in the `cmd` list.
-- To pin the Python binary, set `PY_BIN` to `/usr/bin/python3` in `ScrcpyPicker.app/Contents/Resources/run.command`.
-- To add an app icon, place `AppIcon.icns` at `ScrcpyPicker.app/Contents/Resources/` and add to `Info.plist`:
-```xml
-<key>CFBundleIconFile</key>
-<string>AppIcon</string>
-```
+- Advanced users can customize `scrcpy` arguments using their local `scrcpy` defaults.
 
 #### Known Limitations
 - Only lists devices in `device` state.
