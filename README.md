@@ -1,79 +1,18 @@
 ## ScrcpyPicker
 
-Basit bir macOS uygulaması ile `adb` üzerinden bağlı Android cihazlarını listeler, seçtiğiniz cihazı `scrcpy` ile başlatır.
+ScrcpyPicker is a lightweight macOS Menu Bar app (MenuBarExtra). It lives in the menu bar as an icon, lists connected Android devices over `adb`, and starts mirroring with `scrcpy` using your preferred options.
 
-Son sürüm (macOS uygulaması): 1.0.1
+Latest version: 1.0.1
 
-İndir (Releases): https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
+Download: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
 
----
+![scrcpy](assets/screenshot-debian-600.jpg)
 
-### Türkçe (TR)
-
-#### Gereksinimler
-- **ADB** (Android Platform Tools)
-  - Kurulum (Homebrew):
-```bash
-brew install --cask android-platform-tools
-```
-- **scrcpy**
-  - Kurulum (Homebrew):
-```bash
-brew install scrcpy
-```
-
-Not: Uygulama öncelikle `/opt/homebrew/bin/scrcpy` yolunu dener, yoksa `PATH` içinden `scrcpy` arar.
-
-#### Hızlı Başlangıç
-- İndir ve Aç (macOS uygulaması):
-  1. `ScrcpyPicker.app` uygulamasını indir: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
-  2. Zip’i açın, `ScrcpyPicker.app` üzerine çift tıklayın.
-  3. İlk açılışta “Bilinmeyen geliştirici” uyarısı görürseniz Sistem Ayarları → Güvenlik ve Gizlilik → “Yine de Aç”.
-
-#### Nasıl Çalışır
-1. `adb devices -l` çıktısı okunur ve yalnızca `device` durumundaki cihazlar listelenir.
-2. Ekranda `[index] İsim (serial: XYZ)` formatında cihazlar gösterilir.
-3. Sizden çalıştırmak istediğiniz cihazın index’i istenir.
-4. Seçim yapıldığında aşağıdaki parametrelerle `scrcpy` başlatılır:
-```bash
-/opt/homebrew/bin/scrcpy --video-codec=h265 --max-size=1920 --max-fps=60 --no-audio --keyboard=uhid -s ADB_DEVICE_CODE --turn-screen-off
-```
-  - Eğer `/opt/homebrew/bin/scrcpy` yoksa `which scrcpy` sonucundaki ikili kullanılır.
-
-#### macOS Uygulaması (Çift Tıklama)
-- `ScrcpyPicker.app` üzerine çift tıklayın ve ekrandaki yönergeleri izleyin.
-
-#### İzinler ve Güvenlik
-- İlk çalıştırmada macOS Gatekeeper uyarı verebilir. Sistem Ayarları → Güvenlik ve Gizlilik’ten “Yine de Aç” deyin.
-- `adb` ile cihaz bağlantısı için:
-  - Geliştirici seçeneklerinden USB hata ayıklama aktif olmalı.
-  - Cihazda yetkilendirme penceresi kabul edilmeli (ilk bağlantıda).
-- Terminal izinleri: Bazı macOS sürümlerinde Terminal için erişim izinleri (Erişilebilirlik/Automation) gerekebilir.
-
-#### Sorun Giderme
-- Uygulama açılıp kapanıyor, aksiyon yok:
-  - `adb` kurulu mu? `adb devices -l` çıktısını kontrol edin.
-  - `scrcpy` kurulu mu? `which scrcpy` bir yol döndürmeli.
-  - Cihaz `device` durumunda mı? `unauthorized/offline` cihazlar listelenmez.
-  - `run.command` açıldığında hata kodu mesajı görürseniz bağımlılıkları kontrol edin.
-- `scrcpy` performansı düşük:
-  - USB 3.0 kablo kullanın, `--max-size` ve `--max-fps` parametrelerini düşürmeyi deneyin.
-- `scrcpy` sesi yok:
-  - Parametreler `--no-audio` içerir. Ses gerekiyorsa bu parametreyi betikte/komutta kaldırın.
-
-#### Özelleştirme
-- İleri düzey kullanıcılar `scrcpy` argümanlarını sistemlerindeki `scrcpy` varsayılanlarıyla özelleştirebilir.
-
-#### Bilinen Kısıtlar
-- Ayarlanabilir seçenekler (Ayarlar menüsünden): Maksimum boyut, Maks FPS, Ekranı karart (Turn screen off), Ses, Video codec (H.264/H.265/AV1), Bitrate, UHID klavye, Pencere başlığı, Her zaman üstte, Kayıt ve kayıt yolu, Dokunuşları göster, Cihazı uyanık tut, Kapatınca cihazı kapat, Kapatınca server'ı sonlandır.
-- Yalnızca `device` durumundaki cihazlar listelenir.
-- `adb` ve `scrcpy` yoksa uygulama çalışmaz.
+This project builds on top of the excellent open source tool [scrcpy](https://github.com/Genymobile/scrcpy) by Genymobile.
 
 ---
 
-### English (EN)
-
-#### Requirements
+### Requirements
 - **ADB** (Android Platform Tools)
   - Install (Homebrew):
 ```bash
@@ -87,50 +26,37 @@ brew install scrcpy
 
 Note: The app first tries `/opt/homebrew/bin/scrcpy`; if missing, it falls back to the `scrcpy` found in `PATH`.
 
-#### Quick Start
-- Download & Open (macOS app):
-  1. Download `ScrcpyPicker.app`: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
-  2. Unzip and double-click `ScrcpyPicker.app`.
-  3. If you see an “Unidentified developer” warning, go to System Settings → Security & Privacy → “Open Anyway”.
+### Quick Start
+1. Download `ScrcpyPicker.app`: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
+2. Unzip and double‑click `ScrcpyPicker.app`.
+3. A new icon appears in the macOS menu bar.
+4. Click the icon → pick your Android device from the list → press Start (or select directly).
+5. Open Settings from the menu to adjust options like codec, fps, bitrate, audio, etc.
 
-#### How It Works
-1. Reads `adb devices -l` and lists only devices in `device` state.
-2. Prints devices as `[index] Name (serial: XYZ)`.
-3. Prompts you for the selected index.
-4. Launches `scrcpy` with the following parameters:
-```bash
-/opt/homebrew/bin/scrcpy --video-codec=h265 --max-size=1920 --max-fps=60 --no-audio --keyboard=uhid -s ADB_DEVICE_CODE --turn-screen-off
-```
-  - If `/opt/homebrew/bin/scrcpy` is unavailable, uses the binary from `which scrcpy`.
+### Features
+- Max size, Max FPS
+- Turn screen off while mirroring
+- Audio forwarding
+- Video codec selection: H.264 / H.265 / AV1
+- Bitrate control
+- UHID keyboard for better key mapping
+- Custom window title, Always on top
+- Recording (choose output path)
+- Show touches, Keep device awake
+- Power off device on close, Kill server on close
+ - Menu bar presence for one‑click access (MenuBarExtra)
 
-#### macOS App (Double-Click)
-- Double-click `ScrcpyPicker.app` and follow on-screen guidance.
+### How It Works
+1. The menu bar popover queries `adb devices -l` and lists only devices in `device` state.
+2. From the popover, choose a device and (optionally) tweak Settings.
+3. ScrcpyPicker launches `scrcpy` with the selected options and connects to the chosen device.
 
-#### Permissions & Security
-- macOS Gatekeeper may block the first run. Use System Settings → Security & Privacy → “Open Anyway”.
-- For `adb` device access:
-  - USB debugging must be enabled in Developer Options.
-  - Accept the authorization prompt on the device (first connection).
-- Terminal permissions: some macOS versions may require Accessibility/Automation permissions for Terminal.
-
-#### Troubleshooting
-- App opens then closes with no action:
-  - Is `adb` installed? Check `adb devices -l` output.
-  - Is `scrcpy` installed? `which scrcpy` should return a path.
-  - Is the device in `device` state? `unauthorized/offline` devices are ignored.
-  - If `run.command` shows a non-zero exit code, verify dependencies.
-- Low `scrcpy` performance:
-  - Use a USB 3.0 cable; try lowering `--max-size` and `--max-fps`.
-- No audio in `scrcpy`:
-  - Parameters include `--no-audio`. Remove it if you need audio.
-
-#### Customization
-- Advanced users can customize `scrcpy` arguments using their local `scrcpy` defaults.
-
-#### Known Limitations
-- Configurable options (from Settings): Max size, Max FPS, Turn screen off, Audio, Video codec (H.264/H.265/AV1), Bitrate, UHID keyboard, Window title, Always on top, Recording and output path, Show touches, Keep device awake, Power off on close, Kill server on close.
+### Known Limitations
 - Only lists devices in `device` state.
-- The app will not work without `adb` and `scrcpy` installed.
+- The app requires `adb` and `scrcpy` to be installed.
+
+### Localization
+- Looking for Turkish? See `README.tr.md`.
 
 ## Find this repository useful? :heart:
 Support it by joining __[stargazers](https://github.com/iamkurtgoz/ScrcpyPicker)__ for this repository. :star: <br>
