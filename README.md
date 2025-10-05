@@ -65,9 +65,9 @@ Not: Uygulama öncelikle `/opt/homebrew/bin/scrcpy` yolunu dener, yoksa `PATH` i
 - İleri düzey kullanıcılar `scrcpy` argümanlarını sistemlerindeki `scrcpy` varsayılanlarıyla özelleştirebilir.
 
 #### Bilinen Kısıtlar
+- Ayarlanabilir seçenekler (Ayarlar menüsünden): Maksimum boyut, Maks FPS, Ekranı karart (Turn screen off), Ses, Video codec (H.264/H.265/AV1), Bitrate, UHID klavye, Pencere başlığı, Her zaman üstte, Kayıt ve kayıt yolu, Dokunuşları göster, Cihazı uyanık tut, Kapatınca cihazı kapat, Kapatınca server'ı sonlandır.
 - Yalnızca `device` durumundaki cihazlar listelenir.
 - `adb` ve `scrcpy` yoksa uygulama çalışmaz.
-- Komut, varsayılan olarak ekranı kapatma (`--turn-screen-off`) parametresiyle başlar.
 
 ---
 
@@ -128,9 +128,9 @@ Note: The app first tries `/opt/homebrew/bin/scrcpy`; if missing, it falls back 
 - Advanced users can customize `scrcpy` arguments using their local `scrcpy` defaults.
 
 #### Known Limitations
+- Configurable options (from Settings): Max size, Max FPS, Turn screen off, Audio, Video codec (H.264/H.265/AV1), Bitrate, UHID keyboard, Window title, Always on top, Recording and output path, Show touches, Keep device awake, Power off on close, Kill server on close.
 - Only lists devices in `device` state.
 - The app will not work without `adb` and `scrcpy` installed.
-- By default, it launches with `--turn-screen-off` parameter.
 
 ## Find this repository useful? :heart:
 Support it by joining __[stargazers](https://github.com/iamkurtgoz/ScrcpyPicker)__ for this repository. :star: <br>
