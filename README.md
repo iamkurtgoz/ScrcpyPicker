@@ -4,7 +4,7 @@ ScrcpyPicker is a lightweight macOS Menu Bar app (MenuBarExtra). It lives in the
 
 Latest version: 1.0.1
 
-Download: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
+Download: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPickerV1.0.1.zip
 
 ![scrcpy](assets/screenshot-debian-600.jpg)
 
@@ -27,7 +27,7 @@ brew install scrcpy
 Note: The app first tries `/opt/homebrew/bin/scrcpy`; if missing, it falls back to the `scrcpy` found in `PATH`.
 
 ### Quick Start
-1. Download `ScrcpyPicker.app`: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPicker.app.zip
+1. Download `ScrcpyPicker.app`: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.1/ScrcpyPickerV1.0.1.zip
 2. Unzip and double‑click `ScrcpyPicker.app`.
 3. A new icon appears in the macOS menu bar.
 4. Click the icon → pick your Android device from the list → press Start (or select directly).
