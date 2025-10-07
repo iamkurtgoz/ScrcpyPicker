@@ -4,7 +4,7 @@ ScrcpyPicker bir macOS menü çubuğu uygulamasıdır (MenuBarExtra). Menü çub
 
 Son sürüm: 1.0.2
 
-İndir: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.2/ScrcpyPickerV1.0.2.zip
+İndir: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.2/ScrcpyPicker.zip
 
 ![scrcpy](assets/screenshot-debian-600.jpg)
 
@@ -27,7 +27,7 @@ brew install scrcpy
 Not: Uygulama önce `/opt/homebrew/bin/scrcpy` yolunu dener; bulunamazsa `PATH` içindeki `scrcpy` ikilisini kullanır.
 
 ### Hızlı Başlangıç
-1. `ScrcpyPicker.app` dosyasını indir: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.2/ScrcpyPickerV1.0.2.zip
+1. `ScrcpyPicker.app` dosyasını indir: https://github.com/iamkurtgoz/ScrcpyPicker/releases/download/1.0.2/ScrcpyPicker.zip
 2. Zip’i aç ve `ScrcpyPicker.app` üzerine çift tıkla.
 3. macOS menü çubuğunda yeni bir ikon belirecek.
 4. İkona tıkla → listeden Android cihazını seç → Başlat.
